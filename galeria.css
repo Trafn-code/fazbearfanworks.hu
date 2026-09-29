@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+    background: linear-gradient(to bottom, #000000, #0a0a0a);
+    color: white;
+
+    text-align: center;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   TARTALOM
+   ========================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto 0;
+}
+
+.container h1 {
+    font-size: 48px;
+    margin: 0 0 40px 0;
+}
+
+.container img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    height: 178px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("ff_banner_2.jpg");
+
+    /* Enyhe zoom */
+    background-size: 120% auto;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   NAVIGÁCIÓ
+   ========================= */
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.felirat {
+    font-size: 70px;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: sans-serif;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    margin: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #b30000;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .felirat {
+        font-size: 55px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .container h1 {
+        font-size: 40px;
+    }
+}
+
+
+/* =========================
+   MOBIL
+   ========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        height: auto;
+        min-height: 130px;
+        padding: 15px;
+
+        /* Mobilon nagyobb zoom */
+        background-size: 180% auto;
+        background-position: center 30%;
+    }
+
+    .felirat {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+
+    li {
+        margin: 5px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+
+    .container h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+
+    .container img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+}
+
+
+/* =========================
+   KIS TELEFON
+   ========================= */
+
+@media (max-width: 480px) {
+
+    header {
+        background-size: 200% auto;
+    }
+
+    .felirat {
+        font-size: 32px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .container h1 {
+        font-size: 27px;
+    }
+}

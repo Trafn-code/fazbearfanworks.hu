@@ -1,0 +1,628 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #000000, #0f0f0f);
+    color: white;
+    padding-bottom: 100px;
+    overflow-x: hidden;
+}
+
+header {
+    height: 178px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("ff_banner_2.jpg");
+
+    background-size: 120% auto;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+
+    padding: 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.felirat {
+    font-size: 70px;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: sans-serif;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    margin: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #b30000;
+}
+
+
+/* =========================
+   TARTALOM
+   ========================= */
+
+.tartalom {
+    font-size: 20px;
+    padding: 0 100px;
+    margin-right: 200px;
+}
+
+.tartalom ul {
+    display: block;
+    margin: 10px 0;
+    list-style: circle;
+}
+
+.tartalom li {
+    display: list-item;
+    margin: 10px 0;
+}
+
+.tartalom h1 {
+    color: #b22a2a;
+    margin-left: -20px;
+}
+
+
+/* =========================
+   KÖZEPES FELIRAT
+   ========================= */
+
+.kozepes-felirat {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 50px;
+
+    background-color: black;
+    color: white;
+
+    min-height: 100px;
+    line-height: 1.3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   KÉP + SZÖVEG
+   ========================= */
+
+.kepek {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    margin: 50px auto 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.kep {
+    width: 100%;
+    max-width: 500px;
+}
+
+.kep img {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+.kep-szoveg {
+    text-align: left;
+}
+
+.kep-szoveg h2 {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.kep-szoveg p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   ÖT KÉP
+   ========================= */
+
+.ot-kep {
+    margin: 50px auto 0;
+    width: 90%;
+    max-width: 1400px;
+}
+
+.kep-sor {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+
+.kep-sor img {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.funko-kep-szoveg {
+    margin-top: 100px;
+    margin-left: 0;
+    text-align: left;
+    flex: 1;
+}
+
+.funko-kep-szoveg h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.funko-kep-szoveg p {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+
+/* =========================
+   KÉP-SZÖVEG SZEKCIÓ
+   ========================= */
+
+.kep-szoveg {
+    margin-top: 100px;
+    margin-left: 0;
+    text-align: left;
+    flex: 1;
+}
+
+.kep-szoveg h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+.kep-szoveg h3 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #b32a2a;
+}
+
+.kep-szoveg h6 {
+    margin-top: 0;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.kep-szoveg p {
+    margin-top: 0;
+    font-size: 30px;
+    color: #b32a2a;
+}
+
+
+/* =========================
+   KÉP ÉS SZÖVEG JOBBRA
+   ========================= */
+
+.kep-es-szoveg {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 60px auto 0;
+}
+
+.kep-es-szoveg img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.szoveg-jobbra {
+    margin-left: 0;
+    margin-top: 100px;
+    text-align: left;
+    flex: 1;
+}
+
+.szoveg-jobbra h1 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.szoveg-jobbra p {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+
+/* =========================
+   HÁROM KÉP
+   ========================= */
+
+.harom-kep-szegmens {
+    margin-top: 150px;
+    margin-bottom: 100px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.harom-kep-szegmens h1 {
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+
+.harom-kep {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.harom-kep img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1100px) {
+
+    .felirat {
+        font-size: 55px;
+    }
+
+    .tartalom {
+        padding: 0 50px;
+    }
+
+    .kepek {
+        gap: 40px;
+    }
+
+    .kep-sor {
+        gap: 30px;
+    }
+
+    .kep-szoveg h1 {
+        font-size: 40px;
+    }
+
+    .kep-es-szoveg {
+        width: 90%;
+    }
+
+    .harom-kep {
+        gap: 25px;
+    }
+
+    .harom-kep img {
+        max-width: 30%;
+    }
+}
+
+
+/* =========================
+   MOBIL
+   ========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        height: auto;
+        min-height: 130px;
+
+        /* Mobilon kicsit erősebb zoom */
+        background-size: 180% auto;
+        background-position: center 30%;
+
+        padding: 15px;
+    }
+
+    .felirat {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+
+    li {
+        margin: 5px;
+    }
+
+
+    /* Tartalom */
+
+    .tartalom {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    .tartalom h1 {
+        font-size: 30px;
+        margin-left: 0;
+    }
+
+
+    /* Közepes felirat */
+
+    .kozepes-felirat {
+        font-size: 28px;
+        min-height: auto;
+        line-height: 1.3;
+        padding: 25px 15px;
+    }
+
+
+    /* Képek egymás alatt */
+
+    .kepek {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .kep {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .kep img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+    }
+
+    .kep-szoveg {
+        text-align: center;
+    }
+
+    .kep-szoveg h2 {
+        font-size: 26px;
+    }
+
+    .kep-szoveg p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+
+    /* Öt kép */
+
+    .ot-kep {
+        width: 100%;
+        margin: 40px auto 0;
+        padding: 0 20px;
+    }
+
+    .kep-sor {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 70px;
+    }
+
+    .kep-sor img {
+        width: 100%;
+        max-width: 600px;
+        max-height: none;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .funko-kep-szoveg {
+        width: 100%;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .funko-kep-szoveg h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .funko-kep-szoveg p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+
+    /* Kép + szöveg */
+
+    .kep-szoveg {
+        width: 100%;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .kep-szoveg h1 {
+        font-size: 34px;
+    }
+
+    .kep-szoveg h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .kep-szoveg h6 {
+        font-size: 19px;
+    }
+
+    .kep-szoveg p {
+        font-size: 22px;
+    }
+
+
+    /* Kép és szöveg jobbra */
+
+    .kep-es-szoveg {
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        padding: 0 20px;
+
+        margin: 40px auto 0;
+        gap: 25px;
+    }
+
+    .kep-es-szoveg img {
+        width: 100%;
+        max-width: 600px;
+        max-height: none;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .szoveg-jobbra {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .szoveg-jobbra h1 {
+        font-size: 32px;
+    }
+
+    .szoveg-jobbra p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+
+    /* Három kép */
+
+    .harom-kep-szegmens {
+        margin-top: 80px;
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+
+    .harom-kep-szegmens h1 {
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+
+    .harom-kep {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .harom-kep img {
+        width: 100%;
+        max-width: 450px;
+        max-height: none;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+
+/* =========================
+   KIS TELEFON
+   ========================= */
+
+@media (max-width: 480px) {
+
+    header {
+        background-size: 200% auto;
+    }
+
+    .felirat {
+        font-size: 32px;
+    }
+
+    .tartalom {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .tartalom h1 {
+        font-size: 26px;
+    }
+
+    .kozepes-felirat {
+        font-size: 24px;
+    }
+
+    .kep-szoveg h1 {
+        font-size: 29px;
+    }
+
+    .kep-szoveg h3 {
+        font-size: 21px;
+    }
+
+    .kep-szoveg p {
+        font-size: 19px;
+    }
+
+    .szoveg-jobbra h1 {
+        font-size: 28px;
+    }
+
+    .szoveg-jobbra p {
+        font-size: 17px;
+    }
+
+    .harom-kep-szegmens h1 {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+    background: linear-gradient(to bottom, #ff0055, #000000);
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    height: 178px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("ff_banner_2.jpg");
+
+    /* Enyhe zoom */
+    background-size: 120% auto;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   NAVIGÁCIÓ
+   ========================= */
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.felirat {
+    font-size: 70px;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: sans-serif;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    margin: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #b30000;
+}
+
+
+/* =========================
+   PROFILE BANNER
+   ========================= */
+
+.bannerpf {
+    width: 100%;
+    height: 350px;
+
+    background-image: url("pf_banner.jpg");
+    background-size: 2000px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================
+   BEMUTATKOZÁS
+   ========================= */
+
+.bemutatkozaspf {
+    width: 90%;
+    max-width: 1400px;
+
+    margin: 60px 0 40px 5%;
+
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.bemutatkozas-keppf {
+    width: 40%;
+}
+
+.bemutatkozas-keppf img {
+    display: block;
+
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+
+    margin: 0;
+}
+
+.bemutatkozas-szovegpf {
+    width: 55%;
+
+    font-size: 25px;
+    line-height: 1.5;
+
+    margin-left: 0;
+}
+
+.bemutatkozas-szovegpf h1 {
+    font-size: 50px;
+    margin-top: 0;
+}
+
+
+/* =========================
+   SOCIAL GOMBOK
+   ========================= */
+
+.socialokpf {
+    width: 80%;
+    max-width: 1200px;
+
+    margin: 0 auto 60px auto;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.socialokpf a {
+    flex: 1;
+    max-width: 250px;
+
+    background-color: #74002c;
+    color: white;
+
+    padding: 20px;
+    text-align: center;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.socialokpf a:hover {
+    background-color: #ff0055;
+    transform: translateY(-5px);
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .felirat {
+        font-size: 55px;
+    }
+
+    .bannerpf {
+        height: 300px;
+        background-size: 1600px;
+    }
+
+    .bemutatkozaspf {
+        width: 90%;
+        gap: 30px;
+    }
+
+    .bemutatkozas-szovegpf {
+        font-size: 21px;
+    }
+
+    .bemutatkozas-szovegpf h1 {
+        font-size: 40px;
+    }
+
+    .socialokpf {
+        width: 90%;
+    }
+
+    .socialokpf a {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================
+   MOBIL
+   ========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        height: auto;
+        min-height: 130px;
+        padding: 15px;
+
+        background-size: 180% auto;
+        background-position: center 30%;
+    }
+
+    .felirat {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+
+    li {
+        margin: 5px;
+    }
+
+
+    /* Banner */
+
+    .bannerpf {
+        height: 220px;
+
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    /* Bemutatkozás */
+
+    .bemutatkozaspf {
+        width: 100%;
+        padding: 0 20px;
+        margin: 40px auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .bemutatkozas-keppf {
+        width: 100%;
+    }
+
+    .bemutatkozas-keppf img {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+    }
+
+    .bemutatkozas-szovegpf {
+        width: 100%;
+
+        font-size: 18px;
+        line-height: 1.6;
+
+        margin-left: 0;
+    }
+
+    .bemutatkozas-szovegpf h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+
+    /* Social gombok */
+
+    .socialokpf {
+        width: 100%;
+        padding: 0 20px;
+
+        margin-bottom: 40px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .socialokpf a {
+        width: 100%;
+        max-width: 450px;
+
+        flex: none;
+
+        padding: 16px;
+
+        font-size: 20px;
+    }
+}
+
+
+/* =========================
+   KIS TELEFON
+   ========================= */
+
+@media (max-width: 480px) {
+
+    header {
+        background-size: 200% auto;
+    }
+
+    .felirat {
+        font-size: 32px;
+    }
+
+    .bannerpf {
+        height: 180px;
+    }
+
+    .bemutatkozaspf {
+        padding: 0 15px;
+        margin-top: 30px;
+    }
+
+    .bemutatkozas-szovegpf {
+        font-size: 17px;
+    }
+
+    .bemutatkozas-szovegpf h1 {
+        font-size: 27px;
+    }
+
+    .socialokpf {
+        padding: 0 15px;
+    }
+
+    .socialokpf a {
+        font-size: 18px;
+        padding: 14px;
+    }
+}

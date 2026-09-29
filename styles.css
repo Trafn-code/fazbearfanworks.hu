@@ -1,0 +1,333 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, #000000, #2b0000);
+    color: white;
+}
+
+header {
+    height: auto;
+    max-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("ff_banner_2.jpg");
+    background-size: 120%;
+    background-position: center 30%;
+
+    padding: 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.felirat {
+    font-size: 70px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+li {
+    display: inline-block;
+    margin: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #b30000;
+}
+
+.szegmensek {
+    width: 80%;
+    max-width: 1400px;
+    margin: 50px auto;
+}
+
+.szegmens,
+.szegmens2,
+.szegmens3,
+.szegmens4 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 90px;
+}
+
+.szegmens2,
+.szegmens4 {
+    flex-direction: row-reverse;
+}
+
+.szegmens img,
+.szegmens2 img,
+.szegmens3 img,
+.szegmens4 img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.szegmens img,
+.szegmens2 img,
+.szegmens4 img {
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.szegmens3 img {
+    max-height: 900px;
+    object-fit: contain;
+}
+
+.szegmens h1,
+.szegmens2 h1,
+.szegmens3 h1,
+.szegmens4 h1 {
+    color: #b32a2a;
+}
+
+.sajat-felsorolas {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.sajat-felsorolas li {
+    position: relative;
+    display: list-item;
+    margin: 20px 0;
+    padding-left: 40px;
+}
+
+.sajat-felsorolas li::before {
+    content: ">";
+    position: absolute;
+    margin-right: 20px;
+    left: 0;
+    top: 0;
+}
+
+.szoveg {
+    width: 50%;
+    font-size: 25px;
+}
+
+.forditott {
+    flex-direction: row-reverse;
+}
+
+.hatarido {
+    background-color: #8b0000;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+.email-szekcio {
+    background-color: #5c0000;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.email-szekcio h2 {
+    font-size: 40px;
+    margin-top: 0;
+}
+
+.email-gomb {
+    display: inline-block;
+    background-color: #e00000;
+    color: white;
+    padding: 15px 35px;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.email-gomb:hover {
+    background-color: #ff3333;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .szegmens,
+    .szegmens2,
+    .szegmens3,
+    .szegmens4 {
+        gap: 40px;
+    }
+
+    .szoveg {
+        width: 50%;
+        font-size: 20px;
+    }
+
+    .felirat {
+        font-size: 55px;
+    }
+
+    .határido {
+        font-size: 40px;
+    }
+}
+
+
+/* =========================
+   MOBIL
+   ========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        max-height: none;
+        padding: 15px;
+    }
+
+    .felirat {
+        font-size: 40px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    li {
+        margin: 5px;
+    }
+
+    .szegmensek {
+        width: 100%;
+        padding: 0 20px;
+        margin: 30px auto;
+    }
+
+    .szegmens,
+    .szegmens2,
+    .szegmens3,
+    .szegmens4 {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 60px;
+    }
+
+    .szegmens img,
+    .szegmens2 img,
+    .szegmens3 img,
+    .szegmens4 img {
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .szoveg {
+        width: 100%;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .szoveg h1 {
+        font-size: 30px;
+    }
+
+    .sajat-felsorolas {
+        padding-left: 0;
+    }
+
+    .sajat-felsorolas li {
+        margin: 15px 0;
+        padding-left: 30px;
+    }
+
+    .hatarido {
+        font-size: 32px;
+        padding: 30px 15px;
+        margin-top: 30px;
+    }
+
+    .email-szekcio {
+        padding: 30px 15px;
+    }
+
+    .email-szekcio h2 {
+        font-size: 28px;
+    }
+
+    .email-gomb {
+        padding: 12px 25px;
+        font-size: 20px;
+        max-width: 100%;
+    }
+}
+
+
+/* =========================
+   KIS TELEFON
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .felirat {
+        font-size: 32px;
+    }
+
+    .szegmensek {
+        padding: 0 15px;
+    }
+
+    .szoveg {
+        font-size: 16px;
+    }
+
+    .szoveg h1 {
+        font-size: 26px;
+    }
+
+    .hatarido {
+        font-size: 26px;
+    }
+
+    .email-szekcio h2 {
+        font-size: 24px;
+    }
+
+    .email-gomb {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+}
