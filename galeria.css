@@ -38,6 +38,99 @@ body {
     margin: 0 auto;
 }
 
+/*=====UJ GALERIA=====*/
+
+.kep {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.kep img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    object-fit: contain;
+}
+
+.kep img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.kep a {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.kep {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Maga a kép */
+.kep img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Kattintható területek */
+.kep a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    transition: background 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.bal {
+    left: 0;
+}
+
+.jobb {
+    right: 0;
+}
+
+/* Kép alatti jelzések */
+.jelzes {
+    display: flex;
+    max-width: 1200px;
+    margin: 10px auto;
+    justify-content: space-around;
+}
+
+.jelzes span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 50%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Bal oldal hover */
+.kep:has(.bal:hover) + .jelzes .bal-jelzes {
+    opacity: 1;
+}
+
+/* Jobb oldal hover */
+.kep:has(.jobb:hover) + .jelzes .jobb-jelzes {
+    opacity: 1;
+}
+
+
+
+/*=====UJ GALERIA VEGE=====*/
+
 
 /* =========================
    HEADER
