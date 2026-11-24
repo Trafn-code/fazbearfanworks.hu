@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fazbear Fanworks</title>
+
+    <link rel="stylesheet" href="ff1kat1.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Kezdőlap</a></li>
+                <li><a href="galeria.html">Galéria</a></li>
+                <li><a href="purple-fright.html">Purple Fright</a></li>
+                <li><a href="trafn.html">Trafn</a></li>
+            </ul>
+        </nav>
+
+        <div class="felirat">
+            Galéria
+        </div>
+    </header>
+
+
+    <!-- TOP 3 -->
+
+    <section class="top3-section">
+
+        <h1 class="top3-title">TOP 3</h1>
+
+        <div class="top3-container">
+
+            <div class="top3-item silver">
+                <img src="kat1rajzok/TOP 3/Ruki/Fnaf rajzpályázat.png"
+                     alt="2. helyezett - Ruki">
+                <h3>2. HELYEZETT</h3>
+                <h3>Ruki</h3>
+            </div>
+
+            <div class="top3-item gold">
+                <img src="kat1rajzok/TOP 3/GodzArcsi/1000009635.jpg"
+                     alt="1. helyezett - GodzArcsi">
+                <h3>1. HELYEZETT</h3>
+                <h3>GodzArcsi</h3>
+            </div>
+
+            <div class="top3-item bronze">
+                <img src="kat1rajzok/TOP 3/3 Kővári Liliána/FANTOM MANGLE szelfi.png"
+                     alt="3. helyezett - Kővári Liliána">
+                <h3>3. HELYEZETT</h3>
+                <h3>Kővári Liliána</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TOP 10 -->
+
+    <section class="top10-section">
+
+        <h1 class="top10-title">TOP 10</h1>
+
+        <div class="top10-container">
+
+            <!-- Felső sor -->
+
+            <div class="top10-row">
+
+                <div class="top10-item silver">
+                    <img src="kat1rajzok/TOP 10/Dr. Varga Bernadett/4b41dfee-7ab6-4a3a-be22-cbdd6c88749e-1_all_10183.jpg"
+                         alt="Dr. Varga Bernadett">
+                    <h3>Dr. Varga Bernadett</h3>
+                </div>
+
+                <div class="top10-item silver">
+                    <img src="kat1rajzok/TOP 10/Frankó Noémi/IMG_5866.jpeg"
+                         alt="Frankó Noémi">
+                    <h3>Frankó Noémi</h3>
+                </div>
+
+                <div class="top10-item silver">
+                    <img src="kat1rajzok/TOP 10/Just William/1000035597.jpg"
+                         alt="Just William">
+                    <h3>Just William</h3>
+                </div>
+
+                <div class="top10-item silver">
+                    <img src="kat1rajzok/TOP 10/Kálmán Flóra/IMG_4142.jpeg"
+                         alt="Kálmán Flóra">
+                    <h3>Kálmán Flóra</h3>
+                </div>
+
+            </div>
+
+
+            <!-- Alsó sor -->
+
+            <div class="top10-row bottom-row">
+
+                <div class="top10-item silver">
+                    <img src="kat1rajzok/TOP 10/Novera/1000011421.png"
+                         alt="Novera">
+                    <h3>Novera</h3>
+                </div>
+
+                <div class="top10-item silver">
+                    <img src="kat1rajzok/TOP 10/permee/658 format.png"
+                         alt="permee">
+                    <h3>permee</h3>
+                </div>
+
+                <div class="top10-item silver">
+                    <img src="kat1rajzok/TOP 10/Zorbasajt/1000024081.jpg"
+                         alt="Zorbasajt">
+                    <h3>Zorbasajt</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KÉPNAGYÍTÓ ABLAK -->
+
+<div id="imageLightbox"
+     class="lightbox"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Nagyított kép">
+
+    <button class="lightbox-close"
+            type="button"
+            aria-label="Bezárás">
+        &times;
+    </button>
+
+    <!-- Balra lapozás -->
+    <button class="lightbox-arrow left"
+            type="button"
+            aria-label="Előző kép">
+        &#10094;
+    </button>
+
+    <img id="lightboxImage"
+         class="lightbox-content"
+         src=""
+         alt="Nagyított rajz">
+
+    <!-- Jobbra lapozás -->
+    <button class="lightbox-arrow right"
+            type="button"
+            aria-label="Következő kép">
+        &#10095;
+    </button>
+
+</div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeButton = document.querySelector(".lightbox-close");
+
+    const leftButton = document.querySelector(".lightbox-arrow.left");
+    const rightButton = document.querySelector(".lightbox-arrow.right");
+
+    const galleryImages = document.querySelectorAll(
+    ".top3-item img, .top10-item img, .other-gallery-item img"
+    );
+
+    // Képgalériák
+    const galleries = {
+
+        "kat1rajzok/TOP 3/Ruki/Fnaf rajzpályázat.png": [
+            "kat1rajzok/TOP 3/Ruki/Fnaf rajzpályázat.png",
+            "kat1rajzok/TOP 3/Ruki/Fnaf rajzpályázat világítással.png",
+            "kat1rajzok/TOP 3/Ruki/Fnaf rajzpályázat családbarát verzió.png"
+        ],
+
+        "kat1rajzok/TOP 10/Dr. Varga Bernadett/4b41dfee-7ab6-4a3a-be22-cbdd6c88749e-1_all_10183.jpg": [
+            "kat1rajzok/TOP 10/Dr. Varga Bernadett/4b41dfee-7ab6-4a3a-be22-cbdd6c88749e-1_all_10183.jpg",
+            "kat1rajzok/TOP 10/Dr. Varga Bernadett/4b41dfee-7ab6-4a3a-be22-cbdd6c88749e-1_all_10181.jpg",
+            "kat1rajzok/TOP 10/Dr. Varga Bernadett/8845.jpg",
+            "kat1rajzok/TOP 10/Dr. Varga Bernadett/8852.jpg"
+        ]
+
+    };
+
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    // Kép megjelenítése
+    function showImage(index) {
+
+        currentIndex = index;
+
+        lightboxImage.src = currentGallery[currentIndex];
+
+        // Lapozógombok csak több kép esetén jelenjenek meg
+        if (currentGallery.length > 1) {
+            leftButton.style.display = "block";
+            rightButton.style.display = "block";
+        } else {
+            leftButton.style.display = "none";
+            rightButton.style.display = "none";
+        }
+
+    }
+
+    // Képek megnyitása
+    galleryImages.forEach(function (img) {
+
+        img.style.cursor = "pointer";
+
+        img.addEventListener("click", function () {
+
+            // Megnézzük, tartozik-e galéria a képhez
+            const gallery = galleries[this.getAttribute("src")];
+
+            if (gallery) {
+                currentGallery = gallery;
+            } else {
+                currentGallery = [this.getAttribute("src")];
+            }
+
+            currentIndex = 0;
+
+            lightboxImage.alt = this.alt;
+
+            showImage(currentIndex);
+
+            lightbox.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
+
+    // Következő kép
+    rightButton.addEventListener("click", function () {
+
+        currentIndex++;
+
+        if (currentIndex >= currentGallery.length) {
+            currentIndex = 0;
+        }
+
+        showImage(currentIndex);
+
+    });
+
+    // Előző kép
+    leftButton.addEventListener("click", function () {
+
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex = currentGallery.length - 1;
+        }
+
+        showImage(currentIndex);
+
+    });
+
+    // Bezárás
+    function closeLightbox() {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+        lightboxImage.src = "";
+
+    }
+
+    closeButton.addEventListener("click", closeLightbox);
+
+    // Háttérre kattintás
+    lightbox.addEventListener("click", function (event) {
+
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+
+    });
+
+    // Billentyűzet kezelése
+    document.addEventListener("keydown", function (event) {
+
+        if (!lightbox.classList.contains("active")) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+
+        if (event.key === "ArrowRight" && currentGallery.length > 1) {
+            currentIndex++;
+
+            if (currentIndex >= currentGallery.length) {
+                currentIndex = 0;
+            }
+
+            showImage(currentIndex);
+        }
+
+        if (event.key === "ArrowLeft" && currentGallery.length > 1) {
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = currentGallery.length - 1;
+            }
+
+            showImage(currentIndex);
+        }
+
+    });
+
+});
+
+</script>
+
+<!-- TOVÁBBI RAJZOK GALÉRIÁJA -->
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\★M00Nlight★\rajz1.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">★M00Nlight★</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\★M00Nlight★\rajz2.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">★M00Nlight★</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Ákos Kéri\IMG_20261031_213607~2.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Ákos Kéri</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Akosyt 2019\896.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Akosyt 2019</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Bandesco\511264383_9981609748593378_1894607283787182166_n.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Bandesco</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Bandesco\512740541_9980841522003534_7944740621508277777_n.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Bandesco</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Bandesco\513109378_9980474725373547_5100752722109206226_n.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Bandesco</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Bandesco\513539918_9982239145197105_2978235954208503509_n.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Bandesco</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Bazix\1000012413.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Bazix</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Benke Zsófia Hargita\IMG_5869.jpeg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Benke Zsófia Hargita</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Bernadett Lászlò\1000029310.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Bernadett Lászlò</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Bezsei-Forgách Dániel János\1000003488.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Bezsei-Forgách Dániel János</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Bíró Benedek\1000021846.png"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Bíró Benedek</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Biro Olivér\projectmparajz.png"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Biro Olivér</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Botos Iván\4279.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Botos Iván</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Brindza Áron\1000009390.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Brindza Áron</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Bruckner Damian\gmail_images20261007_190423.png"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Bruckner Damian</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Cat Hun\1000054525.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Cat Hun</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Cicze Dóra Anna\20261004_113916.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Cicze Dóra Anna</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Csernus Gergely Zsombor\757068ee-0b18-4a64-95af-68855e1cf533-1_all_6959.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Csernus Gergely Zsombor</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Danimációk\Screenshot_20261015_230819_Gallery.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Danimációk</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Deak Csenge\1000016919.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Deak Csenge</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Demeter Péter György\20261003_104604.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Demeter Péter György</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Dragonxolotl2\IMG_2203.png"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Dragonxolotl2</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Drk\IMG_9724.jpeg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Drk</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Duka Ákos\IMG_2343.jpeg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Duka Ákos</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Eke Richárd\IMG_0144.jpeg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Eke Richárd</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Farkas Máté\IMG_20261031_230421.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Farkas Máté</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Fazekas Tifani Anasztázia\1000121618.png"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Fazekas Tifani Anasztázia</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Fehér Ármin\Screenshot_2026-10-25-19-14-01-795_com.facebook.katana.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Fehér Ármin</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Fekete-Kállai Levente\1000017701.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Fekete-Kállai Levente</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Fónyad Judit\gmail_images20261011_121449.png"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Fónyad Judit</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Fryvix\unnamed.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Fryvix</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Füleki Napsugár\1000009707.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Füleki Napsugár</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Golden Bonnie\5532.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Golden Bonnie</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Göncz Benedek\1000006979.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Göncz Benedek</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Gyros\1000007651.png"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Gyros</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Heirich Noel\IMG_5974.jpeg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Heirich Noel</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Horváth Dávid\IMG_20261002_132510.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Horváth Dávid</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Horvath Roza\pizzeria simulator, Lefty, animatronic test.jpeg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Horvath Roza</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Huncuttka\Trafn.png"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Huncuttka</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Jack Wise\1000007687.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Jack Wise</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Jack Wise\1000007829.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Jack Wise</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Joanovics Jázmin\1000009138.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Joanovics Jázmin</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Kacsa\1000007982.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Kacsa</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Kageha\fnaf-puppet.png"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Kageha</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Király Virág Rózsa\5951.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Király Virág Rózsa</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Kollár Barna\1000007801.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Kollár Barna</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Kondix\7.png"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Kondix</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Kormány Laura\1000002421.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Kormány Laura</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Lósits Márk\IMG_20261030_213902.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Lósits Márk</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Lőcsei Adrienn\1000011955.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Lőcsei Adrienn</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Lőcsei Adrienn\1000011956.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Lőcsei Adrienn</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Magasházy Márk\18639.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Magasházy Márk</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Majsa Natália\1000023038.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Majsa Natália</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Makosbejgli\Untitled80 (1).png"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Makosbejgli</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Markó Bence\Springtrap.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Markó Bence</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Markó Flórián\Howl the Wolf.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Markó Flórián</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Matos Zoltán\1000003117.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Matos Zoltán</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Matyi Simon\2752.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Matyi Simon</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Mayuri\1000069826.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Mayuri</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Mohácsi Hunor\gmail_images20261031_150336.png"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Mohácsi Hunor</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Nagy -Chernel Konrád\1000007739.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Nagy -Chernel Konrád</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Nagy Róbert\Messenger_creation_F8AB31E4-4D2E-46D4-9FE3-B63D3CB59C92.jpeg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Nagy Róbert</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Német Nóra\1000022220.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Német Nóra</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Németh Barbara\IMG_3028.jpeg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Németh Barbara</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Németh Péter\IMG_2322.jpeg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Németh Péter</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Nyikos Bence\1000007985.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Nyikos Bence</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Papp Zsuzsanna\935.png"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Papp Zsuzsanna</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\R Márk\1000002079.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">R Márk</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\R Márk\1000002106.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">R Márk</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\R Márk\1000002108.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">R Márk</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\R Márk\1000002111.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">R Márk</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\R Márk\1000002123.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">R Márk</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\redwool199\1000005175.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">redwool199</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Rego\926ff1d4-b97f-4feb-99b1-8c25744dcf4c.sketchpad.png"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Rego</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Rego\Drawing.sketchpad (1).png"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Rego</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Rego\Drawing-2.sketchpad.png"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Rego</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Rego\legjobb.png"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Rego</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Rego\schott.png"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Rego</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Rego\spring bonnie.png"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Rego</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Rego\withered bonn.png"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Rego</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Réka\IMG-598996bf12240ea27daeaaf7210ffbf7-V.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Réka</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Renzoace\2605.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Renzoace</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Ropoli Márk\1000002044.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Ropoli Márk</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Rosier sz\1000068309.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Rosier sz</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Somogyi Luca\20261003_132633.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Somogyi Luca</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Stix Ádám\Image.jpeg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Stix Ádám</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Szabó Hanna\1000024700.png"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Szabó Hanna</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Szegedi Gergő\Nightmare Fredbear - Gergő.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Szegedi Gergő</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\TADC_Fann_Jax\6149.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">TADC_Fann_Jax</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Talabér Péter\20261031_170334.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Talabér Péter</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Tóth Bernadett\1000029270.png"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Tóth Bernadett</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Törgyéki Norbert\1000015724.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Törgyéki Norbert</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Ujváry András\Fnaf_cucc.png"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Ujváry András</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Varró Gergő Márk\Scanned_from_a_Lexmark_Multifunction_Product2026-10-18-215152.jpg"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Varró Gergő Márk</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Vass Sándor László\1000038732.jpg"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Vass Sándor László</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Vereb Istvan\8367.jpg"
+                 alt="Pályázati rajz 3">
+            <p class="artist-name">Vereb Istvan</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Víg-Rovnyai Kende\20261010_080059.jpg"
+                 alt="Pályázati rajz 4">
+            <p class="artist-name">Víg-Rovnyai Kende</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Vion\1000196001.jpg"
+                 alt="Pályázati rajz 5">
+            <p class="artist-name">Vion</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="other-gallery-section">
+
+    <div class="other-gallery-container">
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Zimonyi Alexandra\1000046428.png"
+                 alt="Pályázati rajz 1">
+            <p class="artist-name">Zimonyi Alexandra</p>
+        </div>
+
+        <div class="other-gallery-item">
+            <img src="kat1rajzok\OKAY\Zoltán Tamás\whitered bonnie_20261026101722.png"
+                 alt="Pályázati rajz 2">
+            <p class="artist-name">Zoltán Tamás</p>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
